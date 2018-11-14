@@ -4,9 +4,11 @@
     <div class="container">
       <div class="header__in">
         <div class="header__left">
+
           <router-link to="/" class="logo header__logo">
             <img alt="Vue logo" src="@/assets/logo.png">
           </router-link>
+
         </div>
         <div class="header__right">
 
@@ -23,15 +25,9 @@
 
 </template>
 
-<script>
-export default {
-}
-</script>
-
 <style lang="sass" scoped>
 
 @import '@/assets/helpers/_variables.sass'
-
 
 .header
   position: fixed
@@ -42,6 +38,7 @@ export default {
   background: $gray
   padding: 10px 0
   min-width: 320px
+
   &__in
     display: flex
     flex-flow: row nowrap
@@ -51,6 +48,7 @@ export default {
 .logo
   display: inline-block
   transition: opacity .15s
+
   &:hover
     opacity: .8
 
@@ -60,14 +58,17 @@ export default {
 
 .nav
   margin: 0 -10px
+
   @media only screen and (max-width: "767px")
     margin: 0 -5px
+
   &__link
     margin: 0 10px
     color: $black
     padding: 0 5px
     border-bottom: 1px solid transparent
     transition: color .15s
+
     &:hover
       color: rgba($black, .75)
 
@@ -77,6 +78,4 @@ export default {
     @media only screen and (max-width: "767px")
       padding: 0
       margin: 0 5px
-
-
 </style>

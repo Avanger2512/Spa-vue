@@ -68,17 +68,21 @@ export default {
   width: 100%
   margin: 100px auto
   text-align: center
+
   @media only screen and (max-width: "767px")
     margin: 50px auto
+
   &__in
     padding: 20px 40px
     border: 1px solid transparent
     border-radius: 5px
+
     &.is-success
       border-color: $green
+
     &.is-error
       border-color: rgba($red, .5)
+
     & + .btn
       margin-top: 20px
-
 </style>

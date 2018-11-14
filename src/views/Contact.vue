@@ -1,15 +1,15 @@
 <template>
   <div class="contact">
-
     <div class="text-center">
       <h1 class="title">Contact page</h1>
     </div>
+    
     <form class="form"
-      @submit.prevent="checkForm"
+      @submit.prevent="submitForm"
       action="#"
       method="post"
-      v-if="!submited"
-      >
+      v-if="!submited">
+
       <div class="text-center">
         <h3>Please add info</h3>
       </div>
@@ -41,19 +41,17 @@
         <button type="submit"
           name="button"
           class="btn"
-          :disabled="done < info.length"
-          >Submit</button>
+          :disabled="done < info.length">
+          Submit
+        </button>
       </div>
     </form>
 
-
     <!-- begin info-message -->
     <app-info-message v-else
-      @backToForm="backVisible"
+      @backToForm="toggleVisible"
     ></app-info-message>
     <!-- end info-message -->
-
-
   </div>
 </template>
 
@@ -131,7 +129,7 @@ export default {
     onChangeArea(e) {
       this.textarea = e;
     },
-    checkForm() {
+    submitForm() {
       console.log('Submit form');
 
       this.$store.commit('resetFormData');
@@ -142,7 +140,7 @@ export default {
 
       this.submited = true;
     },
-    backVisible() {
+    toggleVisible() {
       this.submited = !this.submited
     }
   },
@@ -152,8 +150,6 @@ export default {
     appInfoMessage
   }
 }
-
-
 </script>
 
 <style lang="sass" scoped>
@@ -161,6 +157,7 @@ export default {
 .form
   max-width: 450px
   margin: 50px auto
+
   &__item
     &:not(:last-child)
       margin-bottom: 15px

@@ -55,6 +55,7 @@ export default {
     font-size: 15px
     font-weight: 700
     text-transform: capitalize
+
   textarea
     width: 100%
     border: 1px solid $gray
@@ -63,8 +64,7 @@ export default {
     resize: none
     font-size: 14px
     min-height: 150px
+
   &__total
     font-size: 10px
-
-
 </style>

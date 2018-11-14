@@ -35,7 +35,7 @@ export default {
     needMask: {
       type: Boolean,
       default: false
-    } ,
+    },
     mask: {
       type: [String, Array],
     },
@@ -67,8 +67,7 @@ export default {
       } else {
         this.validate = false;
       }
-    },
-
+    }
   },
   components: {
     TheMask
@@ -79,8 +78,6 @@ export default {
 <style lang="sass">
 
 @import '@/assets/helpers/_variables.sass'
-
-
 
 .input
   &.is-not-valid
