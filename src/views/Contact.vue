@@ -4,12 +4,12 @@
     <div class="text-center">
       <h1 class="title">Contact page</h1>
     </div>
-
     <form class="form"
       @submit.prevent="checkForm"
       action="#"
       method="post"
-      v-if="!submited">
+      v-if="!submited"
+      >
       <div class="text-center">
         <h3>Please add info</h3>
       </div>
@@ -48,7 +48,9 @@
 
 
     <!-- begin info-message -->
-    <app-info-message v-else></app-info-message>
+    <app-info-message v-else
+      @backToForm="backVisible"
+    ></app-info-message>
     <!-- end info-message -->
 
 
@@ -139,6 +141,9 @@ export default {
       }
 
       this.submited = true;
+    },
+    backVisible() {
+      this.submited = !this.submited
     }
   },
   components: {

@@ -62,7 +62,7 @@ export default {
         valid: this.pattern.test(e.target.value)
       });
 
-      if (this.pattern.test(this.data)) {
+      if (this.pattern.test(e.target.value)) {
          this.validate= true;
       } else {
         this.validate = false;
@@ -99,7 +99,7 @@ export default {
     border: 1px solid $gray
     min-height: 30px
     font-size: 14px
-    padding: 0 5px
+    padding: 0 10px
     border-radius: 5px
     transition: border-color .15s
 

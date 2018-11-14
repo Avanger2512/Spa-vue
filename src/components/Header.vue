@@ -60,6 +60,8 @@ export default {
 
 .nav
   margin: 0 -10px
+  @media only screen and (max-width: "767px")
+    margin: 0 -5px
   &__link
     margin: 0 10px
     color: $black
@@ -71,6 +73,10 @@ export default {
 
     &.router-link-exact-active
       border-color: $green
+
+    @media only screen and (max-width: "767px")
+      padding: 0
+      margin: 0 5px
 
 
 </style>

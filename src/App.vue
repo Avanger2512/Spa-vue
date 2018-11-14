@@ -56,6 +56,10 @@ img
 .wrapper
   padding-top: 75px
 
+.desc
+  font-size: 16px
+  line-height: 1.3
+  margin-top: 40px
 
 .title
   font-size: 50px
