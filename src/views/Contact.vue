@@ -3,7 +3,7 @@
     <div class="text-center">
       <h1 class="title">Contact page</h1>
     </div>
-    
+
     <form class="form"
       @submit.prevent="submitForm"
       action="#"
@@ -24,6 +24,7 @@
           :needMask="item.needMask"
           :pattern="item.pattern"
           :mask="item.mask"
+          :error="item.errorInfo"
           @onChangeInput="onChange(index, $event)"
         ></app-input>
       </div>
@@ -74,7 +75,8 @@ export default {
           value: '',
           placeholder: 'Enter name',
           mask:'',
-          pattern: /^[a-zA-Z ]{3,30}$/
+          pattern: /^[a-zA-Z ]{3,30}$/,
+          errorInfo: 'Please, enter at least 3 characters'
         },
         {
           title: 'phone',
@@ -82,7 +84,8 @@ export default {
           placeholder: 'Enter phone',
           needMask: true,
           mask:'+380#########',
-          pattern: /\+[0-9]{12,}$/
+          pattern: /\+[0-9]{12,}$/,
+          errorInfo: 'Please enter at least 12 numbers'
         }
       ],
       textarea: ''

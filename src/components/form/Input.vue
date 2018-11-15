@@ -17,7 +17,9 @@
       :placeholder="placeholder"
       v-else>
     </the-mask>
-
+    <div class="input__error">
+      {{ error }}
+    </div>
   </div>
 </template>
 
@@ -39,7 +41,8 @@ export default {
     mask: {
       type: [String, Array],
     },
-    pattern: RegExp
+    pattern: RegExp,
+    error: String
   },
   data() {
     return {
@@ -80,10 +83,14 @@ export default {
 @import '@/assets/helpers/_variables.sass'
 
 .input
+  position: relative
   &.is-not-valid
     input
       border-color: $red
 
+    .input__error
+      display: block
+      
   label
     display: block
     margin-bottom: 5px
@@ -99,5 +106,15 @@ export default {
     padding: 0 10px
     border-radius: 5px
     transition: border-color .15s
+
+  &__error
+    display: none
+    font-size: 10px
+    line-height: 1
+    position: absolute
+    top: 100%
+    margin-top: 3px
+    left: 0
+    color: $red
 
 </style>
